@@ -1,5 +1,6 @@
 % Columbia Beamer Outer Theme - rax 04.10.12
 % Copyright Rodrigo A. Carrasco - rax <www.rax.cl>
+% Modified by Chung-Heng Yeh <chyeh@ee.columbia.edu>
 
 \mode<presentation>
 % package for command modification
@@ -10,7 +11,7 @@
 \setbeamercovered{dynamic}
 
 % slides background
-\pgfdeclareimage[width = 160mm]{bkglogo}{ColumbiaShield}
+\pgfdeclareimage[width = 160mm]{bkglogo}{style/fig/ColumbiaShield}
 % set depending on slide
 \usebackgroundtemplate
 {
@@ -35,25 +36,32 @@
 	{\vspace{-2.2mm}}
 	{\vspace{-1mm}}
 	\hbox{\hskip -10mm
-	\begin{beamercolorbox}[wd = 10mm, ht = 5ex, dp = .7ex, left]{logo bar}
+	\begin{beamercolorbox}[wd = 0.1\paperwidth, ht = 6ex, dp = .7ex, left]{logo bar}
 		\hskip 1ex
+		\vspace{1mm}
 		\includegraphics[width = 6mm]{style/fig/SeasCrown_white}
 	\end{beamercolorbox}
-	\hskip 8mm
-	\begin{beamercolorbox}[wd = \paperwidth, ht = 5ex, dp = .7ex, left]{logo bar}
-		\scriptsize{Industrial Engineering \& Operations Research Department}
+	\hskip -3mm
+	\begin{beamercolorbox}[wd = 0.75\paperwidth, ht = 6ex, dp = .7ex, left]{logo bar}
+		\newline
+		\scriptsize{Bionet Group}
+		\newline
+		\scriptsize{Fu Fundation School of Engineering and Applied Science}
 		\newline
 		\scriptsize{Columbia University}
-		\newline
-		\tiny{\textcolor{darkblue}{rax - 2012}}
+	\end{beamercolorbox}
+	\hskip -3mm
+	\begin{beamercolorbox}[wd = 0.3\paperwidth, ht = 6ex, dp = .7ex, left]{logo bar}
+		\hskip 1ex
+		\includegraphics[width = 20mm]{style/fig/bionet_logo.png}
 	\end{beamercolorbox}
 	}
-	
+
 	% center stuff from now onwards
 	\vbox{}
 	\vfill
 	\begin{centering}
-	
+
 	% title and subtitle
 	\begin{beamercolorbox}[wd = \paperwidth, sep = 8pt, center]{title}
 	\usebeamerfont{title}\inserttitle\\
@@ -62,44 +70,44 @@
 	\vskip-1.18em\par
 	\begin{beamercolorbox}[wd = \paperwidth, ht = 1pt]{logo bar}
 	\end{beamercolorbox}
-		
+
 	% authors
 	\vskip1em\par
 	\begin{beamercolorbox}[sep = 8pt, center]{author}
 	\usebeamerfont{author}\insertauthor
 	\end{beamercolorbox}
-	
+
 	% venue
 	\vskip-1em\par
 	\begin{beamercolorbox}[sep = 8pt, center]{institute}
 	\usebeamerfont{institute}\insertinstitute
 	\end{beamercolorbox}
-	
+
 	% date
 	\vskip-1em\par
 	\begin{beamercolorbox}[sep = 8pt, center]{date}
 	\usebeamerfont{date}\insertdate
 	\end{beamercolorbox}
 	\vskip0.5em
-	
+
 	\end{centering}
 	\vfill
-	
-	\vskip 6em\par
-	\hbox{
-	\begin{beamercolorbox}[wd = .5\paperwidth, sep = 8pt, left]{date}
-	\hskip -8mm
-	\ifthenelse{\equal{\presenter}{}}
-	{\tiny{\textcolor{white}{Presented by}}}
-	{\tiny{Presented by \presenter}}
-	\end{beamercolorbox}
-	
+
+%	\vskip 6em\par
+%	\hbox{
+%	\begin{beamercolorbox}[wd = .5\paperwidth, sep = 8pt, left]{date}
+%	\hskip -8mm
+%	\ifthenelse{\equal{\presenter}{}}
+%	{\tiny{\textcolor{white}{Presented by}}}
+%	{\tiny{Presented by \presenter}}
+%	\end{beamercolorbox}
+
 %	\begin{beamercolorbox}[wd = .4\paperwidth, sep = 8pt, right]{date}
 %	\ifthenelse{\equal{\showver}{1}}
 %	{\tiny{v.\ver~(b.\build)}}
 %	{\tiny{\textcolor{white}{v.\ver~(b.\build)}}}
 %	\end{beamercolorbox}
-	}
+%	}
 }
 
 % ***** Headline Definition *****
@@ -149,27 +157,32 @@
 {
 	% make footline box to hold different beamer boxes
 	\hbox{\hspace{-1mm}
-	
+
 	% SEAS logo
-	\hskip 2ex
-	\includegraphics[width = 0.6cm]{style/fig/SeasCrown_blue}
-	\hskip 1ex
-	
+	\begin{beamercolorbox}[wd = .02\paperwidth, ht = 2.75ex, dp = 1.5ex, right]{text in head/foot}
+	\vspace{-0.2ex}
+	\includegraphics[width = 0.15cm]{style/fig/SeasCrown_blue}
+	\end{beamercolorbox}
+
 	% authors box
-	\begin{beamercolorbox}[wd = .25\paperwidth, ht = 2.75ex, dp = 1.5ex, left]{text in head/foot}
+	\begin{beamercolorbox}[wd = .23\paperwidth, ht = 2.75ex, dp = 1.5ex, left]{text in head/foot}
 	\usebeamerfont{text in head/foot}\insertshortauthor
 	\end{beamercolorbox}
-	
+
 	% title box
 	\begin{beamercolorbox}[wd= .415\paperwidth, ht = 2.25ex, dp = 1ex, center]{text in head/foot}
 	\usebeamerfont{text in head/foot}\insertshorttitle
 	\end{beamercolorbox}
-	
+
 	% slide number box
 	\begin{beamercolorbox}[wd = .25\paperwidth, ht = 2.75ex, dp = 1.5ex, right]{text in head/foot}
-	\insertframenumber{} / \inserttotalframenumbernew
+	\insertframenumber{} / \inserttotalframenumber
 	\end{beamercolorbox}
-		
+
+	\begin{beamercolorbox}[wd = .02\paperwidth, ht = 2.75ex, dp = 1.5ex, right]{text in head/foot}
+	\includegraphics[width = 7mm]{style/fig/bionet_logo_black.png}
+	\vspace{-1mm}
+	\end{beamercolorbox}
 	}
 }
 
